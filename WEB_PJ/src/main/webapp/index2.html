@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./cssstyle.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>textarea 태그</h1>
+	<label for="message">메시지를 입력하세여</label> <br>
+	<textarea id="message" cols="10" rows="5"></textarea><br>	
+	<select id="lang">
+		<option value="">--언어 선택--</option>
+		<option value="html">HTML</option>
+		<option value="css">CSS</option>
+		<option value="js">자바스크립트</option>
+		<option value="ts">타입스크립트</option>		
+	</select>
+	<br>
+	<select id="shopping">
+		<optgroup label="fruit">
+			<option value="f_apl">apple</option>
+			<option value="f_org">orange</option>
+			<option value="f_ban">banana</option>
+		</optgroup>
+		<optgroup label="vegetable">
+			<option value="v_tom">tomato</option>
+			<option value="v_cuc">cucumber</option>
+			<option value="v_rad">radish</option>
+		</optgroup>
+	</select>
+	<br>
+	<input id="job" list="jobs">
+	<datalist id="jobs">
+		<option value="학생">
+		<option value="디자이너">
+		<option value="퍼블리셔">
+		<option value="개발자">
+	</datalist>
+	<br>
+	<progress id="progressBar"></progress>
+	<br>
+	<meter min="0"  max="100"
+		   low="33" high="67"
+		   optimum="50" value="20"
+		  >20달러</meter>
+		  <img alt="    m " src="">	  
+		  
+  	<ul class="outer">
+  		<li>육류</li>
+  		<li>채소</li>
+  		<li style="text-decoration: line-through">유제품</li>
+  		<li>과일
+  			<ul>
+  				<li>사과</li>
+  				<li>포도</li>
+  				<li>딸기</li>
+  				<li>키위</li>
+  			</ul>
+  		</li>
+  	</ul>
+  	<ol>
+  		<li>한놈</li>
+  		<li class="starter">두시기</li>
+  		<li>석삼</li>
+  		<li>너구리</li>
+  		<li>다섯놈</li>
+  		<li>육개장</li>
+  		<li>칠푼이</li>
+  		<li>팔보채</li>
+  		<li>구공탄</li>  		
+  	</ol>
+</body>
+</html>

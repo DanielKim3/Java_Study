@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.col{
+	background-color: red;
+}
+
+.outer li {
+	color: olivedrab;
+}
+
+.outer > li {
+	color: dodgerblue;
+}
+
+* {
+	color : #cc0044;
+}
+

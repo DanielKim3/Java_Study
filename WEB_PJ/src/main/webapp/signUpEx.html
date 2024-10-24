@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        padding: 0;
+        border: 0;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        margin: 50px auto;
+      }
+
+      th,
+      td {
+        padding: 5px;
+        text-align: left;
+        font-weight: normal;
+        border: 1px solid black;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .no-spin::-webkit-inner-spin-button,
+      .no-spin::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery UI CDN -->
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#datePicker").datepicker({
+          dateFormat: "yy.mm.dd",
+          changeMonth: true,
+          changeYear: true,
+        });
+      });
+
+      function validateCheck() {
+        const reg1 = /^[A-Za-z0-9]{4,12}$/;
+        const reg2 = /^(010|011|017|018|019)/;
+        const reg3 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        let id = document.getElementById("id");
+        let pw = document.getElementById("pw");
+        let pwCheck = document.getElementById("pwCheck");
+        let phoneNumFront = document.getElementById("phoneNumFront");
+        let email = document.getElementById("email");
+
+        if (!reg1.test(id.value)) {
+          alert("아이디 형식이 맞지 않습니다");
+          return false;
+        }
+
+        if (!reg1.test(pw.value)) {
+          alert("비밀번호 형식이 맞지 않습니다");
+          return false;
+        }
+
+        if (pw.value != pwCheck.value) {
+          alert("비밀번호가 일치 하지 않습니다");
+          return false;
+        }
+
+        if (!reg2.test(phoneNumFront.value)) {
+          alert("전화번호 형식에 맞지 않습니다");
+          return false;
+        }
+
+        if (!reg3.test(email.value)) {
+          alert("이메일 형식이 맞지 않습니다");
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 style="text-align: center">회원가입</h1>
+    <form
+      action="./result.html"
+      name="join"
+      method="post"
+      onsubmit="return validateCheck()"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th
+              colspan="2"
+              style="
+                background-color: #49516b;
+                text-align: center;
+                color: white;
+                font-weight: bold;
+              "
+            >
+              회원 기본 정보
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>*아이디</th>
+            <td>
+              <input
+                type="text"
+                id="id"
+                name="id"
+                minlength="4"
+                maxlength="12"
+                required
+              />
+              <span>※ 4-12자의 영문 대소문자와 숫자로만 입력</span>
+            </td>
+          </tr>
+          <tr>
+            <th>*비밀번호</th>
+            <td>
+              <input
+                type="password"
+                id="pw"
+                name="pw"
+                minlength="4"
+                maxlength="12"
+                required
+              />
+              <span>※ 4-12자의 영문 대소문자와 숫자로만 입력</span>
+            </td>
+          </tr>
+          <tr>
+            <th>*비밀번호 확인</th>
+            <td>
+              <input
+                type="password"
+                id="pwCheck"
+                name="pwCheck"
+                minlength="4"
+                maxlength="12"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>이름</th>
+            <td>
+              <input type="text" id="name" name="name" />
+            </td>
+          </tr>
+          <tr>
+            <th>전화번호</th>
+            <td>
+              <input
+                class="no-spin"
+                type="number"
+                id="phoneNumFront"
+                name="phoneNumFront"
+                size="5"
+                style="width: 50px"
+              />
+              <span>-</span>
+              <input
+                class="no-spin"
+                type="number"
+                id="phoneNumMiddle"
+                name="phoneNumMiddle"
+                size="5"
+                style="width: 50px"
+              />
+              <span>-</span>
+              <input
+                class="no-spin"
+                type="number"
+                id="phoneNumEnd"
+                name="phoneNumEnd"
+                style="width: 50px"
+              />
+              <span>※ 앞자리는 010,011,017,018,019로 입력</span>
+            </td>
+          </tr>
+          <tr>
+            <th>주소</th>
+            <td>
+              <input type="text" id="address" name="address" />
+            </td>
+          </tr>
+          <tr>
+            <th>생일</th>
+            <td>
+              <input type="datetime" id="datePicker" />
+            </td>
+          </tr>
+          <tr>
+            <th>직업</th>
+            <td>
+              <div>
+                <input
+                  type="radio"
+                  id="occupation1"
+                  name="occupation"
+                  checked
+                />
+                <label for="student">학생</label>
+                <input type="radio" id="occupation2" name="occupation" />
+                <label for="salesman">직장인</label>
+                <input type="radio" id="occupation3" name="occupation" />
+                <label for="self-employed">자영업</label>
+                <input type="radio" id="occupation4" name="occupation" />
+                <label for="others">기타</label>
+                <input type="text" size="10" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>성별</th>
+            <td>
+              <div>
+                <input type="radio" id="sex1" name="sex" checked />
+                <label for="man">남성</label>
+                <input type="radio" id="sex2" name="sex" />
+                <label for="man">여성</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>*이메일</th>
+            <td>
+              <input type="text" id="email" name="email" />
+              <span>ex)aaa12345@naver.com</span>
+            </td>
+          </tr>
+          <tr>
+            <th>자기소개</th>
+            <td>
+              <textarea
+                name="intro"
+                id="intro"
+                name="intro"
+                rows="5"
+                cols="70"
+              ></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="display: flex; justify-content: center">
+        <div>
+          <input type="submit" value="회원가입" />
+          <input type="reset" value="다시 작성" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

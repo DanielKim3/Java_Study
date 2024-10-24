@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+<!-- jQuery UI CDN -->
+<link rel="stylesheet"
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<style>
+table {
+	padding: 0;
+	border: 0;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+	text-align: left;
+	font-weight: normal;
+	border: 1px solid black;
+}
+
+.hide {
+	display: none;
+}
+
+.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+}
+</style>
+<script src="script2.js" defer></script>
+</head>
+<body style="margin: 0 auto">
+	<form action="./result.html" name="join" method="get"
+		onsubmit="return validate()">
+		<h1 style="text-align: center">회원가입</h1>
+		<table style="margin: 0 auto">
+			<thead>
+				<tr>
+					<th colspan="2"
+						style="background-color: #49516b; text-align: center">
+						<span style="color: white; font-weight: bold">회원
+							기본 정보</span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>*아이디</th>
+					<td><input type="text" id="userid" name="id"
+						oninput="validateId()" /> <span>※ 4 ~ 12자의 영문 대소문자와 숫자로만
+							입력</span>
+						<div class="failure-message hide font">아이디 형식이 맞지 않습니다</div>
+						<div class="success-message hide font">사용할 수 있는 아이디 입니다</div></td>
+				</tr>
+				<tr>
+					<th>*비밀번호</th>
+					<td><input type="password" id="password1" name="password"
+						oninput="validatePw()" /> <span>※ 4~ 12자의
+							영문 대소문자와 숫자로만 입력</span>
+						<div class="pw-fail hide">비밀번호 형식이 맞지 않습니다</div>
+						<div class="success-message hide">사용할 수 있는 아이디 입니다</div></td>
+				</tr>
+				<tr>
+					<th>*비밀번호 확인</th>
+					<td><input type="password" id="password2" name="password2"
+						oninput="checkPw()" />
+						<div class="mismatchMessage hide">비밀번호가 일치하지 않습니다</div>
+						<div class="successMessage hide">비밀번호가 일치 합니다</div></td>
+				</tr>
+				<tr>
+					<th>이름</th>
+					<td><input type="text" id="realname" name="realname" /></td>
+				</tr>
+				<tr>
+					<th>*전화번호</th>
+					<td><input type="number" class="no-spin" style="width: 50px"
+						maxlength="3" name="frontnumber" /> <span>-</span>
+						<input type="number" class="no-spin" style="width: 50px"
+						maxlength="4" name="middlenumber" /> <span>-</span>
+						<input type="number" class="no-spin" style="width: 50px"
+						maxlength="4" name="endnumber" /> <span>※앞자리는
+							010,011,017,018,019로 입력</span>
+						<div class="frontnumber-error hide">앞자리가 잘못 되었습니다.</div></td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td><input type="text" id="address" name="address" /></td>
+				</tr>
+				<tr>
+					<th>생일</th>
+					<td><input type="text" id="birthday" name="birthday" /></td>
+				</tr>
+				<tr>
+					<th>직업</th>
+					<td><input type="radio" value="학생" id="occupation"
+						name="occupation" /> <span>학생</span> <input
+						type="radio" value="직장인" id="occupation" name="occupation" />
+						<span>직장인</span> <input type="radio" value="자영업" id="occupation"
+						name="occupation" /> <span>자영업</span> <input
+						type="radio" value="기타" id="occupation" name="occupation" />
+						<span>기타</span> <input type="text" size="10" id="occupation_etc"
+						name="occupation_etc" /></td>
+				</tr>
+				<tr>
+					<th>성별</th>
+					<td><input type="radio" id="sex" /> <span>남성</span> <input
+						type="radio" id="sex" /> <span>여성</span></td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td><input type="text" id="email" name="email" /> <span>ex)
+							aaa123456@naver.com</span></td>
+				</tr>
+				<tr>
+					<th>자기소개</th>
+					<td><textarea name="자기소개" id="intro" cols="80" rows="10"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="margin-top: 20px; display: flex; justify-content: center">
+			<div>
+				<input type="submit" value="회원 가입" /> <input type="reset"
+					value="다시 작성" />
+			</div>
+		</div>
+	</form>
+</body>
+</html>

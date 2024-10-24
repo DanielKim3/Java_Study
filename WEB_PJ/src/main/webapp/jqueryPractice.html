@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+   <!-- jQuery UI CDN -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		$("ans").hide();
+    		
+    		$("p.q1").click(function() {
+    			$("ans.q1").show();
+    		});
+    		
+    		$("ans.q1").click(function() {
+    			$("ans.q1").hide();
+    		})
+    		
+    		$("p.q2").click(function() {
+    			$("ans.q2").show();
+    		})
+    		
+    		$("ans.q2").click(function() {
+    			$("ans.q2").hide();
+    		})
+    		
+    		
+    	})    	
+   	  
+    	$(function() {
+            $('#datepicker').datepicker();
+        });
+    </script>
+</head>
+<body>
+ 	<h2>질문1 : 대한민국의 수도는 어디입니까?</h2>
+    <p class="q1">[정답 보기]</p>
+    <ans class="q1">대한민국의 수도는 <strong>서울</strong>입니다.</ans>
+    <br></br>
+    <h2>질문2 : 대한민국의 국보1호는 무엇입니까?</h2>
+    <p class="q2">[정답 보기]</p>
+    <ans class="q2">대한민국의 국보1호는 <strong>숭례문</strong>입니다.</ans>
+    <p>일정을 선택해주세요. <input type="text" id="datepicker"></p>
+</body>    
+</html>

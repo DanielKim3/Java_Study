@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		padding: 16px 32px; font-size: 1.2em;
+	}
+	
+	button, input[type=text] {
+		padding: 0.5em 1em;
+		font-size: 1.2em;
+	}
+	
+	#clickPosition {
+		display: inline-block;
+		margin: 24px 0;
+		width: 400px;
+		height: 240px;
+		line-height: 240px;
+		text-align: center;
+		background-color: lightblue;
+	}
+</style>
+</head>
+<body>
+	<button id="myButton">이벤트를 부여하세여</button>
+	<br>
+	<div id="clickPosition">
+		클릭 전
+	</div>
+	<br>
+	<input id="myInput" type="text">
+	<script type="text/javascript">
+		const $myButton = document.querySelector("#myButton");
+		const logMouseEnter = () => {console.log('진입');};
+		const logMouseLeave = () => {console.log('이탈');};
+		const clickPosition = document.querySelector('#clickPosition');
+		
+		
+		myButton.addEventListener('click', function () {
+			console.log('click')
+		})
+		
+		myButton.addEventListener('mouseenter', logMouseEnter);
+		myButton.addEventListener('mouseleave', logMouseLeave);
+		
+		clickPosition.addEventListener('click', function(e) {
+			console.log(e);
+		})
+		
+		clickPosition.addEventListener('click', function(e) {
+			let text = 'x: ';
+			text += e.clientX;
+			text += ', y: ';
+			text += e.clientY;
+			clickPosition.textContent = text;
+		})
+	</script>
+</body>
+</html>
