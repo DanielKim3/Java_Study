@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="member.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/script/member.js"></script>
 </head>
 <body>
 <h2>회원 전용 페이지</h2>
