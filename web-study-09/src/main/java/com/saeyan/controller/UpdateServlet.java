@@ -13,16 +13,16 @@ import com.saeyan.dao.MemberDAO;
 import com.saeyan.dto.MemberVO;
 
 /**
- * Servlet implementation class MemberUpdateServlet
+ * Servlet implementation class UpdateServlet
  */
-@WebServlet("/updatePrototype.do")
-public class MemberUpdateServlet extends HttpServlet {
+@WebServlet("/update2.do")
+public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberUpdateServlet() {
+    public UpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,9 +31,9 @@ public class MemberUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		RequestDispatcher dispatcher  = request.getRequestDispatcher("member/memberUpdate.jsp");
 		dispatcher.forward(request, response);
-		
 	}
 
 	/**
@@ -43,6 +43,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		
+		String name = request.getParameter("name");
 		String userid = request.getParameter("userid");
 		String pwd = request.getParameter("pwd");
 		String email = request.getParameter("email");
@@ -50,6 +51,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		String admin = request.getParameter("admin");
 		
 		MemberVO mVo = new MemberVO();
+		mVo.setName(name);
 		mVo.setUserid(userid);
 		mVo.setPwd(pwd);
 		mVo.setEmail(email);

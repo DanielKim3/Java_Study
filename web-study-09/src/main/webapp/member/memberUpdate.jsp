@@ -10,17 +10,17 @@
 </head>
 <body>
    <h2>회원 수정</h2>
-   <form action="memberUpdate.do" method="post" name="frm">
+   <form action="update2.do" method="post" name="frm">
       <table>
          <tr>
             <td>이름</td>
             <td><input type="text" name="name" size="20"
-               value="${mVo.name}" readonly></td>
+               value="${mVo.name}" ></td>
          </tr>
          <tr>
             <td>아이디</td>
             <td><input type="text" name="userid" size="20"
-               value="${mVo.userid}" readonly></td>
+               value="${mVo.userid}" ></td>
          </tr>
          <tr>
             <td>암 &nbsp; 호</td>
