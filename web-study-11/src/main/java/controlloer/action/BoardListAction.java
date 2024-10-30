@@ -24,6 +24,9 @@ public class BoardListAction implements Action{
 		request.setAttribute("boardList", boardList);
 			
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		
+		System.out.println(request.getAttribute("msg"));
+		
 		dispatcher.forward(request, response);
 	}
 }

@@ -30,10 +30,13 @@
 				</a>
 			</td>
 			<td>${board.name}</td>
-			<td><fmt:formatDate value="${board.writedate }"/></td>
+			<td><fmt:formatDate value="${board.writedate }" pattern="MM-dd HH:mm"/></td>
 			<td>${board.readcount }</td>
 		</tr>
 	</c:forEach>
+	<c:if test="${not empty msg}">
+    <p>${msg}</p>
+</c:if>
 </table>
 </div>
 </body>

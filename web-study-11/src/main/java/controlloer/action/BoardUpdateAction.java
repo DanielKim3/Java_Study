@@ -26,6 +26,8 @@ public class BoardUpdateAction implements Action{
 		BoardDAO bDao = BoardDAO.getInstance();
 		bDao.updateBoard(bVo);
 		
+		request.setAttribute("msg", "수정완료되었습니다.");
+		
 		new BoardListAction().execute(request, response);	
 	}
 }
