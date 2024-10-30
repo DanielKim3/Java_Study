@@ -177,7 +177,9 @@
                <Context docBase="sign-up-test-02" path="/sign-up-test-02" reloadable="true" source="org.eclipse.jst.jee.server:sign-up-test-02">
                <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/TestDB" password="mbc1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/nscott" username="root"/>
                </Context>
-               </Host>
+               <Context docBase="web-study-11" path="/web-study-11" reloadable="true" source="org.eclipse.jst.jee.server:web-study-11">
+               	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/TestDB" password="mbc1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/nscott" username="root"/>
+               </Context></Host>
     </Engine>
   </Service>
 </Server>
